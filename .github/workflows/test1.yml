@@ -1,0 +1,11 @@
+name: test1
+on: workflow_dispatch
+jobs:
+    print_variable:
+        runs-on: ubuntu-latest
+        steps:
+            - name: set variable
+              run: |
+                  MY_NAME=Ehsan
+                  echo "hi my name is ${MY_NAME}"
+            
