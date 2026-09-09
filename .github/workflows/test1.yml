@@ -6,6 +6,7 @@ jobs:
         steps:
             - name: set variable
               run: |
-                  MY_NAME=Ehsan
-                  echo "hi my name is ${MY_NAME}"
+                  #MY_NAME=Ehsan
+                  #echo "hi my name is ${MY_NAME}"
+                  ech "hi"
             
