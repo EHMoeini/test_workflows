@@ -1,0 +1,28 @@
+name: practice
+on: push
+jobs:
+  lint_test_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get repo
+        run: actions/checkout@v4
+      - name: navigate to project's folder
+        run: cd ./19
+      - name: install
+        run: npm install
+      - name: lint
+        run: npm run lint
+      - name: test
+        run: npm run test
+      - name: build
+        run: npm run build
+  deploy:
+    needs: lint_test_build
+    runs-on: ubuntu-latest
+    steps:
+      - name: get repo
+        run: actions/checkout@v4
+      - name: navigate to project's folder
+        run: cd ./19
+      - name: run the app
+        run: npm run dev
