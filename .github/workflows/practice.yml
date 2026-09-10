@@ -3,11 +3,18 @@ on: push
 jobs:
   lint_test_build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./19
     steps:
       - name: get repo
-        run: actions/checkout@v4
-      - name: navigate to project's folder
-        run: cd ./19
+        uses: actions/checkout@v4
+      - name: directory checkout
+        run: ls
+      - name: directory path print
+        run: pwd
+      - name: directory checkout
+        run: ls
       - name: install
         run: npm install
       - name: lint
@@ -21,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: get repo
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: navigate to project's folder
         run: cd ./19
       - name: run the app
