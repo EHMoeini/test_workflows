@@ -1,0 +1,11 @@
+name: practice2
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  issue_open:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print the issue
+        run: echo "${{toJSON(github.event.issue)}}"
